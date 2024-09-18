@@ -12,3 +12,6 @@ Data serialized has the following information
 }
 ````
 This data was serialize in a nodejs project
+
+To modify the serialize data use the following project.
+https://github.com/cokkike88/node-protobuf
