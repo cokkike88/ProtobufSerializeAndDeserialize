@@ -19,8 +19,8 @@ public class Main {
         Stock.Laptop laptop = Stock.Laptop.newBuilder()
                 .setId("L")
                 .setBrand("Leno")
-                .setName(StringValue.of("X1"))
-                .setDescription(Stock.NullableString.newBuilder().setValue("").build())
+//                .setName(StringValue.of("X1"))
+//                .setDescription(Stock.NullableString.newBuilder().setValue("product description"))
                 .setPrice(Stock.NullableDouble.newBuilder().setValue(0).build())
                 .build();
 
@@ -29,10 +29,12 @@ public class Main {
         System.out.println(bytes);
 
         Stock.Laptop a = Stock.Laptop.parseFrom(bytes);
-        System.out.println(a.getDescription().getValue());
-        System.out.println(a.getDescription().getNull());
+        System.out.println("** Name");
+        System.out.println(a.hasName());
         System.out.println("** Description");
+        System.out.println(a.hasDescription());
         System.out.println(a.getDescription().hasValue());
+        System.out.println(a.getDescription().getValue());
         System.out.println("** Price");
         System.out.println(a.getPrice().hasValue());
         System.out.println("** Stock");
@@ -50,10 +52,17 @@ public class Main {
             System.out.println(d);
             Stock.Laptop lap = Stock.Laptop.parseFrom(d.getData());
             System.out.println(lap);
+            System.out.println("*** name");
+            System.out.println(lap.hasName());
             System.out.println("*** description");
+            System.out.println(lap.hasDescription());
             System.out.println(lap.getDescription().hasValue());
+            System.out.println(lap.getDescription().getValue());
+            System.out.println("*** model");
+            System.out.println(lap.hasModel());
             System.out.println("*** price");
             System.out.println(lap.getPrice().hasValue());
+            System.out.println(lap.getPrice().getValue());
 
         }
         catch (Exception ex){

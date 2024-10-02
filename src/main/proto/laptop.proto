@@ -11,10 +11,11 @@ message Laptop {
   string id = 1;
   string brand = 2;
   google.protobuf.StringValue name = 3;
-  NullableString description = 4;
-  NullableDouble price = 5;
-  NullableInt32 stock = 6;
-  NullableInt64 world_stock = 7;
+  google.protobuf.StringValue model = 4;
+  NullableString description = 5;
+  NullableDouble price = 6;
+  NullableInt32 stock = 7;
+  NullableInt64 world_stock = 8;
 }
 
 message NullableString {
